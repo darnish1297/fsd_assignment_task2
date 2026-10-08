@@ -1,0 +1,211 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   App.css — Student Practice Tracker Styles
+   Task 2 · React Basics: Components, JSX, Props, State, Lifecycle
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Reset & base ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #e8f4f8 0%, #dfe9f3 100%);
+  min-height: 100vh;
+  color: #1a1a2e;
+}
+
+/* ── App shell ───────────────────────────────────────────────────────────── */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 3rem;
+  gap: 1.8rem;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.app-header {
+  background: linear-gradient(90deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+  padding: 1.4rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.35);
+}
+
+.header-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.app-footer {
+  background: linear-gradient(90deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+  padding: 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 -4px 12px rgba(26, 35, 126, 0.2);
+}
+
+.app-footer p {
+  font-size: 0.9rem;
+  color: #c5cae9;
+  letter-spacing: 0.5px;
+}
+
+/* ── Student Profile Card ────────────────────────────────────────────────── */
+.student-profile {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 8px 32px rgba(26, 35, 126, 0.12);
+  border-top: 5px solid #3949ab;
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0);     }
+}
+
+.profile-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #e8eaf6;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.8rem;
+  background: #f5f7ff;
+  border-radius: 8px;
+  border-left: 4px solid #7986cb;
+}
+
+.profile-label {
+  font-weight: 600;
+  color: #3949ab;
+  font-size: 0.95rem;
+}
+
+.profile-value {
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Sessions row — highlighted */
+.sessions-row {
+  background: linear-gradient(90deg, #e8eaf6, #c5cae9);
+  border-left: 4px solid #1a237e;
+}
+
+.session-count {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a237e;
+  min-width: 2.5rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(26, 35, 126, 0.2);
+}
+
+/* ── Toggle section ──────────────────────────────────────────────────────── */
+.toggle-section {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Control buttons ─────────────────────────────────────────────────────── */
+.controls {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Base button */
+.btn {
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.btn:active {
+  transform: translateY(0);
+  filter: brightness(0.93);
+}
+
+/* Complete Practice */
+.btn-complete {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+  color: #fff;
+}
+
+/* Reset */
+.btn-reset {
+  background: linear-gradient(135deg, #c62828, #e53935);
+  color: #fff;
+}
+
+/* Hide / Show toggle */
+.btn-toggle {
+  font-size: 0.88rem;
+  padding: 0.5rem 1.2rem;
+}
+
+.btn-hide {
+  background: linear-gradient(135deg, #e65100, #ef6c00);
+  color: #fff;
+}
+
+.btn-show {
+  background: linear-gradient(135deg, #1565c0, #1976d2);
+  color: #fff;
+}

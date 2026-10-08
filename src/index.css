@@ -1,0 +1,4 @@
+/* Reset global body margin for a full-bleed layout */
+html, body, #root {
+  height: 100%;
+}
